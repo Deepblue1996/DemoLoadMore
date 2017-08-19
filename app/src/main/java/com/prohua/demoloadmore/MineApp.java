@@ -13,8 +13,6 @@ import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 
-import retrofit2.Retrofit;
-
 /**
  * Created by Deep on 2017/8/17 0017.
  */
