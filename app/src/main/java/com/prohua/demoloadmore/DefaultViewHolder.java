@@ -29,7 +29,7 @@ public class DefaultViewHolder extends RecyclerView.ViewHolder {
      * @param id 控件的id
      * @return View
      */
-    private View vbi(int id) {
+    public View vbi(int id) {
         return id == 0 ? itemView : itemView.findViewById(id);
     }
 
