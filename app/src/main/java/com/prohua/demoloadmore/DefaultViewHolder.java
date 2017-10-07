@@ -29,7 +29,7 @@ public class DefaultViewHolder extends RecyclerView.ViewHolder {
      * @param id 控件的id
      * @return View
      */
-    private View findViewById(int id) {
+    private View vbi(int id) {
         return id == 0 ? itemView : itemView.findViewById(id);
     }
 
@@ -39,8 +39,8 @@ public class DefaultViewHolder extends RecyclerView.ViewHolder {
      * @param id 控件的id
      * @return 当前view, 链式
      */
-    public DefaultViewHolder text(int id, CharSequence sequence) {
-        View view = findViewById(id);
+    public DefaultViewHolder setText(int id, CharSequence sequence) {
+        View view = vbi(id);
         if (view instanceof TextView) {
             ((TextView) view).setText(sequence);
         }
@@ -54,8 +54,8 @@ public class DefaultViewHolder extends RecyclerView.ViewHolder {
      * @param stringRes Res.string.id
      * @return 当前view, 链式
      */
-    public DefaultViewHolder text(int id, @StringRes int stringRes) {
-        View view = findViewById(id);
+    public DefaultViewHolder setText(int id, @StringRes int stringRes) {
+        View view = vbi(id);
         if (view instanceof TextView) {
             ((TextView) view).setText(stringRes);
         }
@@ -69,8 +69,8 @@ public class DefaultViewHolder extends RecyclerView.ViewHolder {
      * @param colorId Res.color.id
      * @return 当前view, 链式
      */
-    public DefaultViewHolder textColorId(int id, int colorId) {
-        View view = findViewById(id);
+    public DefaultViewHolder setTextColor(int id, int colorId) {
+        View view = vbi(id);
         if (view instanceof TextView) {
             ((TextView) view).setTextColor(ContextCompat.getColor(view.getContext(), colorId));
         }
@@ -84,8 +84,8 @@ public class DefaultViewHolder extends RecyclerView.ViewHolder {
      * @param imageId Res.mipmap.id
      * @return 当前view, 链式
      */
-    public DefaultViewHolder image(int id, int imageId) {
-        View view = findViewById(id);
+    public DefaultViewHolder setImgRes(int id, int imageId) {
+        View view = vbi(id);
         if (view instanceof ImageView) {
             ((ImageView) view).setImageResource(imageId);
         }

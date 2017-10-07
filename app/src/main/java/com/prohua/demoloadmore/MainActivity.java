@@ -67,6 +67,6 @@ public class MainActivity extends AppCompatActivity implements DefaultAdapter.On
 
     @Override
     public void onBindItemViewHolder(DefaultViewHolder holder, int position) {
-        holder.text(R.id.text_x, list.get(position));
+        holder.setText(R.id.text_x, list.get(position));
     }
 }
