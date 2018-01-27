@@ -6,15 +6,13 @@ RecyclerView LoadMore QUIT
  准备工作:
  
  工程budle.gradle添加
-<pre><code>
-dependencies {
+<pre><code>dependencies {
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
 }
 </code></pre>
 
 复制模板三个基类
-<pre><code>
-DefaultAdapter.class
+<pre><code>DefaultAdapter.class
 DefaultRVAdapter.class
 DefaultViewHolder.class
 </code></pre>
@@ -24,8 +22,7 @@ DefaultViewHolder.class
 自定义Application类:
 
 添加相关初始化代码
-<pre><code>
-//static 代码段可以防止内存泄露
+<pre><code>//static 代码段可以防止内存泄露
 static {
    //设置全局的Header构建器
    SmartRefreshLayout.setDefaultRefreshHeaderCreater(new DefaultRefreshHeaderCreater() {
@@ -46,17 +43,14 @@ static {
    });
 }
 </code></pre>
-
 RecyclerView顶部底部监听
-
-<pre><code>
-// 监听下拉刷新
+<pre><code>// 监听下拉刷新
 refreshLayout.setOnRefreshListener(new OnRefreshListener() {
     @Override
-        public void onRefresh(RefreshLayout refreshlayout) {
-            refreshlayout.finishRefresh(2000);
-        }
-    });
+    public void onRefresh(RefreshLayout refreshlayout) {
+        refreshlayout.finishRefresh(2000);
+    }
+});
 // 监听上拉加载
 refreshLayout.setOnLoadmoreListener(new OnLoadmoreListener() {
     @Override
@@ -67,16 +61,13 @@ refreshLayout.setOnLoadmoreListener(new OnLoadmoreListener() {
 refreshLayout.setEnableRefresh(true);//是否启用下拉刷新功能
 refreshLayout.setEnableLoadmore(true);//是否启用上拉加载功能
 </code></pre>
-
 适配器
-<pre><code>
-DefaultAdapter recyclerViewAdapter = new DefaultAdapter(
+<pre><code>DefaultAdapter recyclerViewAdapter = new DefaultAdapter(
      getApplicationContext(), list, R.layout.item_list);
 recyclerViewAdapter.setOnBindItemView(this);
 </code></pre>
 使用ItemView接口,重写
-<pre><code>
-@Override
+<pre><code>@Override
 public void onBindItemViewHolder(DefaultViewHolder holder, int position) {
      holder.text(R.id.text_x, list.get(position));
 }
