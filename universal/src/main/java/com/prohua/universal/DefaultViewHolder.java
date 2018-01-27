@@ -1,4 +1,4 @@
-package com.prohua.demoloadmore;
+package com.prohua.universal;
 
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;

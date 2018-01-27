@@ -1,4 +1,4 @@
-package com.prohua.demoloadmore;
+package com.prohua.universal;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;

@@ -1,4 +1,4 @@
-package com.prohua.demoloadmore;
+package com.prohua.universal;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
@@ -33,7 +33,7 @@ public class DefaultAdapter extends DefaultRVAdapter {
      * @param list     列表数据
      * @param layoutId item布局id
      */
-    protected DefaultAdapter(Context context, List list, @LayoutRes int layoutId,
+    public DefaultAdapter(Context context, List list, @LayoutRes int layoutId,
                              @LayoutRes int headerLayoutId, @LayoutRes int footerLayoutId) {
         super(context, list, layoutId, headerLayoutId, footerLayoutId);
     }
