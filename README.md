@@ -1,4 +1,4 @@
-# DemoLoadMore
+# UniversalAdapter
 RecyclerView LoadMore QUIT
 
 部署:
