@@ -3,14 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp">
 
+    <ImageView
+        android:id="@+id/imgBg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <TextView
-        android:id="@+id/text_x"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="center"
+        android:text="@string/this_is_header"
         android:textColor="@android:color/black"
         android:textSize="14sp" />
 

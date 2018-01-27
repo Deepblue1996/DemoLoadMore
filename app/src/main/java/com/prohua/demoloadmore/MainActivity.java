@@ -16,7 +16,8 @@ import java.util.List;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 
-public class MainActivity extends AppCompatActivity implements DefaultAdapter.OnBindItemView {
+public class MainActivity extends AppCompatActivity
+        implements DefaultAdapter.OnBindItemView, DefaultAdapter.OnBindHeaderView, DefaultAdapter.OnBindFooterView {
 
     private List<String> list;
 
@@ -26,8 +27,8 @@ public class MainActivity extends AppCompatActivity implements DefaultAdapter.On
         setContentView(R.layout.activity_main);
 
         list = new ArrayList<>();
-        for (int i = 0; i < 22; i++) {
-            list.add(String.valueOf(i));
+        for (int i = 0; i < 20; i++) {
+            list.add(String.valueOf(i + 1));
         }
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
@@ -40,8 +41,10 @@ public class MainActivity extends AppCompatActivity implements DefaultAdapter.On
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
         DefaultAdapter recyclerViewAdapter = new DefaultAdapter(
-                getApplicationContext(), list, R.layout.item_list);
+                getApplicationContext(), list, R.layout.item_list, R.layout.list_header, R.layout.list_footer);
         recyclerViewAdapter.setOnBindItemView(this);
+        recyclerViewAdapter.setOnBindHeaderView(this);
+        recyclerViewAdapter.setOnBindFooterView(this);
 
         recyclerView.setAdapter(recyclerViewAdapter);
 
@@ -68,5 +71,15 @@ public class MainActivity extends AppCompatActivity implements DefaultAdapter.On
     @Override
     public void onBindItemViewHolder(DefaultViewHolder holder, int position) {
         holder.setText(R.id.text_x, list.get(position));
+    }
+
+    @Override
+    public void onBindHeaderViewHolder(DefaultViewHolder holder, int position) {
+        holder.setImgRes(R.id.imgBg, R.mipmap.ic_launcher_round);
+    }
+
+    @Override
+    public void onBindFooterViewHolder(DefaultViewHolder holder, int position) {
+        holder.setImgRes(R.id.imgBg, R.mipmap.ic_launcher_round);
     }
 }
