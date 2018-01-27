@@ -1,7 +1,7 @@
 # DemoLoadMore
 RecyclerView LoadMore QUIT
 
- * 这个示范模板,非常简单,用法:
+这个示范模板,非常简单,用法:
  
 准备工作:
  
@@ -17,7 +17,7 @@ DefaultRVAdapter.class
 DefaultViewHolder.class
 </code></pre>
 
-* 使用步骤:
+使用步骤:
 
 自定义Application类:
 
@@ -43,7 +43,7 @@ static {
    });
 }
 </code></pre>
-* RecyclerView顶部底部监听
+RecyclerView顶部底部监听
 <pre><code>// 监听下拉刷新
 refreshLayout.setOnRefreshListener(new OnRefreshListener() {
     @Override
