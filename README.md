@@ -1,6 +1,8 @@
 # UniversalAdapter
 RecyclerView LoadMore QUIT
 
+### RecyclerView 快捷使用适配器 插入头布局，脚布局
+
 部署:
  
 工程budle.gradle添加
