@@ -7,8 +7,8 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.prohua.universal.DefaultAdapter;
-import com.prohua.universal.DefaultViewHolder;
+import com.prohua.universal.UniversalAdapter;
+import com.prohua.universal.UniversalViewHolder;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
@@ -19,7 +19,7 @@ import java.util.List;
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 
 public class MainActivity extends AppCompatActivity
-        implements DefaultAdapter.OnBindItemView, DefaultAdapter.OnBindHeaderView, DefaultAdapter.OnBindFooterView {
+        implements UniversalAdapter.OnBindItemView, UniversalAdapter.OnBindHeaderView, UniversalAdapter.OnBindFooterView {
 
     private List<String> list;
 
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         list = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             list.add(String.valueOf(i + 1));
         }
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-        DefaultAdapter recyclerViewAdapter = new DefaultAdapter(
+        UniversalAdapter recyclerViewAdapter = new UniversalAdapter(
                 getApplicationContext(), list, R.layout.item_list, R.layout.list_header, R.layout.list_footer);
         recyclerViewAdapter.setOnBindItemView(this);
         recyclerViewAdapter.setOnBindHeaderView(this);
@@ -71,17 +71,17 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onBindItemViewHolder(DefaultViewHolder holder, int position) {
+    public void onBindItemViewHolder(UniversalViewHolder holder, int position) {
         holder.setText(R.id.text_x, list.get(position));
     }
 
     @Override
-    public void onBindHeaderViewHolder(DefaultViewHolder holder, int position) {
+    public void onBindHeaderViewHolder(UniversalViewHolder holder, int position) {
         holder.setImgRes(R.id.imgBg, R.mipmap.ic_launcher_round);
     }
 
     @Override
-    public void onBindFooterViewHolder(DefaultViewHolder holder, int position) {
+    public void onBindFooterViewHolder(UniversalViewHolder holder, int position) {
         holder.setImgRes(R.id.imgBg, R.mipmap.ic_launcher_round);
     }
 }

@@ -12,14 +12,14 @@ import android.widget.TextView;
  * Created by Deep on 2017/8/17 0017.
  */
 
-public class DefaultViewHolder extends RecyclerView.ViewHolder {
+public class UniversalViewHolder extends RecyclerView.ViewHolder {
 
     /**
      * 构造器
      *
      * @param view
      */
-    public DefaultViewHolder(View view) {
+    public UniversalViewHolder(View view) {
         super(view);
     }
 
@@ -39,7 +39,7 @@ public class DefaultViewHolder extends RecyclerView.ViewHolder {
      * @param id 控件的id
      * @return 当前view, 链式
      */
-    public DefaultViewHolder setText(int id, CharSequence sequence) {
+    public UniversalViewHolder setText(int id, CharSequence sequence) {
         View view = vbi(id);
         if (view instanceof TextView) {
             ((TextView) view).setText(sequence);
@@ -54,7 +54,7 @@ public class DefaultViewHolder extends RecyclerView.ViewHolder {
      * @param stringRes Res.string.id
      * @return 当前view, 链式
      */
-    public DefaultViewHolder setText(int id, @StringRes int stringRes) {
+    public UniversalViewHolder setText(int id, @StringRes int stringRes) {
         View view = vbi(id);
         if (view instanceof TextView) {
             ((TextView) view).setText(stringRes);
@@ -69,7 +69,7 @@ public class DefaultViewHolder extends RecyclerView.ViewHolder {
      * @param colorId Res.color.id
      * @return 当前view, 链式
      */
-    public DefaultViewHolder setTextColor(int id, int colorId) {
+    public UniversalViewHolder setTextColor(int id, int colorId) {
         View view = vbi(id);
         if (view instanceof TextView) {
             ((TextView) view).setTextColor(ContextCompat.getColor(view.getContext(), colorId));
@@ -84,7 +84,7 @@ public class DefaultViewHolder extends RecyclerView.ViewHolder {
      * @param imageId Res.mipmap.id
      * @return 当前view, 链式
      */
-    public DefaultViewHolder setImgRes(int id, int imageId) {
+    public UniversalViewHolder setImgRes(int id, int imageId) {
         View view = vbi(id);
         if (view instanceof ImageView) {
             ((ImageView) view).setImageResource(imageId);

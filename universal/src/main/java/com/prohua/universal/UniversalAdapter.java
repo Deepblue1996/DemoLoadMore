@@ -11,7 +11,7 @@ import java.util.List;
  * Created by Deep on 2017/8/17 0017.
  */
 
-public class DefaultAdapter extends DefaultRVAdapter {
+public class UniversalAdapter extends UniversalRVAdapter {
 
     /**
      * 列表项视图
@@ -33,8 +33,8 @@ public class DefaultAdapter extends DefaultRVAdapter {
      * @param list     列表数据
      * @param layoutId item布局id
      */
-    public DefaultAdapter(Context context, List list, @LayoutRes int layoutId,
-                             @LayoutRes int headerLayoutId, @LayoutRes int footerLayoutId) {
+    public UniversalAdapter(Context context, List list, @LayoutRes int layoutId,
+                            @LayoutRes int headerLayoutId, @LayoutRes int footerLayoutId) {
         super(context, list, layoutId, headerLayoutId, footerLayoutId);
     }
 
@@ -45,7 +45,7 @@ public class DefaultAdapter extends DefaultRVAdapter {
      * @param position 当前的position
      */
     @Override
-    protected void onBindItemViewHolder(DefaultViewHolder holder, final int position) {
+    protected void onBindItemViewHolder(UniversalViewHolder holder, final int position) {
 
         int nowPosition = position;
         if (super.headerLayoutId != 0) {
@@ -79,12 +79,12 @@ public class DefaultAdapter extends DefaultRVAdapter {
     }
 
     @Override
-    protected void onBindHeaderViewHolder(DefaultViewHolder holder, int position) {
+    protected void onBindHeaderViewHolder(UniversalViewHolder holder, int position) {
         onBindHeaderView.onBindHeaderViewHolder(holder, position);
     }
 
     @Override
-    protected void onBindFooterViewHolder(DefaultViewHolder holder, int position) {
+    protected void onBindFooterViewHolder(UniversalViewHolder holder, int position) {
         onBindFooterView.onBindFooterViewHolder(holder, position);
     }
 
@@ -101,7 +101,7 @@ public class DefaultAdapter extends DefaultRVAdapter {
      * 列表项视图接口
      */
     public interface OnBindItemView {
-        void onBindItemViewHolder(DefaultViewHolder holder, int position);
+        void onBindItemViewHolder(UniversalViewHolder holder, int position);
     }
 
     /**
@@ -117,7 +117,7 @@ public class DefaultAdapter extends DefaultRVAdapter {
      * 头部视图接口
      */
     public interface OnBindHeaderView {
-        void onBindHeaderViewHolder(DefaultViewHolder holder, int position);
+        void onBindHeaderViewHolder(UniversalViewHolder holder, int position);
     }
 
     /**
@@ -133,7 +133,7 @@ public class DefaultAdapter extends DefaultRVAdapter {
      * 脚部视图接口
      */
     public interface OnBindFooterView {
-        void onBindFooterViewHolder(DefaultViewHolder holder, int position);
+        void onBindFooterViewHolder(UniversalViewHolder holder, int position);
     }
 
     /**

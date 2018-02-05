@@ -14,7 +14,7 @@ import java.util.List;
  * Created by Deep on 2017/8/17 0017.
  */
 
-public abstract class DefaultRVAdapter<T> extends RecyclerView.Adapter<DefaultViewHolder> {
+public abstract class UniversalRVAdapter<T> extends RecyclerView.Adapter<UniversalViewHolder> {
 
     /**
      * TYPE_HEADER: 列表头
@@ -54,8 +54,8 @@ public abstract class DefaultRVAdapter<T> extends RecyclerView.Adapter<DefaultVi
      * @param list     数据
      * @param layoutId item布局
      */
-    protected DefaultRVAdapter(Context context, List<T> list, @LayoutRes int layoutId,
-                               @LayoutRes int headerLayoutId, @LayoutRes int footerLayoutId) {
+    protected UniversalRVAdapter(Context context, List<T> list, @LayoutRes int layoutId,
+                                 @LayoutRes int headerLayoutId, @LayoutRes int footerLayoutId) {
         this.list = list;
         this.layoutId = layoutId;
         this.context = context;
@@ -83,13 +83,13 @@ public abstract class DefaultRVAdapter<T> extends RecyclerView.Adapter<DefaultVi
      * @return 当前view
      */
     @Override
-    public DefaultViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public UniversalViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == TYPE_HEADER) {
-            return new DefaultViewHolder(LayoutInflater.from(context).inflate(headerLayoutId, parent, false));
+            return new UniversalViewHolder(LayoutInflater.from(context).inflate(headerLayoutId, parent, false));
         } else if (viewType == TYPE_FOOTER) {
-            return new DefaultViewHolder(LayoutInflater.from(context).inflate(footerLayoutId, parent, false));
+            return new UniversalViewHolder(LayoutInflater.from(context).inflate(footerLayoutId, parent, false));
         } else {
-            return new DefaultViewHolder(LayoutInflater.from(context).inflate(layoutId, parent, false));
+            return new UniversalViewHolder(LayoutInflater.from(context).inflate(layoutId, parent, false));
         }
     }
 
@@ -99,7 +99,7 @@ public abstract class DefaultRVAdapter<T> extends RecyclerView.Adapter<DefaultVi
      * @param holder   抽象向内传入的视图
      * @param position 当前的position
      */
-    protected abstract void onBindItemViewHolder(DefaultViewHolder holder, int position);
+    protected abstract void onBindItemViewHolder(UniversalViewHolder holder, int position);
 
     /**
      * 将数据绑定到header的视图
@@ -107,7 +107,7 @@ public abstract class DefaultRVAdapter<T> extends RecyclerView.Adapter<DefaultVi
      * @param holder   抽象向内传入的视图
      * @param position 当前的position
      */
-    protected abstract void onBindHeaderViewHolder(DefaultViewHolder holder, int position);
+    protected abstract void onBindHeaderViewHolder(UniversalViewHolder holder, int position);
 
     /**
      * 将数据绑定到Footer的视图
@@ -115,27 +115,27 @@ public abstract class DefaultRVAdapter<T> extends RecyclerView.Adapter<DefaultVi
      * @param holder   抽象向内传入的视图
      * @param position 当前的position
      */
-    protected abstract void onBindFooterViewHolder(DefaultViewHolder holder, int position);
+    protected abstract void onBindFooterViewHolder(UniversalViewHolder holder, int position);
 
     @Override
-    public void onBindViewHolder(DefaultViewHolder holder, int position) {
+    public void onBindViewHolder(UniversalViewHolder holder, int position) {
         if (getItemViewType(position) == TYPE_HEADER) {
             try {
                 onBindHeaderViewHolder(holder, position);
             } catch (NullPointerException e) {
-                Log.e(DefaultRVAdapter.class.getName(), "You did not set this method --> onBindHeaderViewHolder!");
+                Log.e(UniversalRVAdapter.class.getName(), "You did not set this method --> onBindHeaderViewHolder!");
             }
         } else if (getItemViewType(position) == TYPE_FOOTER) {
             try {
                 onBindFooterViewHolder(holder, position);
             } catch (NullPointerException e) {
-                Log.e(DefaultRVAdapter.class.getName(), "You did not set this method --> onBindFooterViewHolder!");
+                Log.e(UniversalRVAdapter.class.getName(), "You did not set this method --> onBindFooterViewHolder!");
             }
         } else {
             try {
                 onBindItemViewHolder(holder, position);
             } catch (NullPointerException e) {
-                Log.e(DefaultRVAdapter.class.getName(), "You did not set this method --> onBindItemViewHolder!");
+                Log.e(UniversalRVAdapter.class.getName(), "You did not set this method --> onBindItemViewHolder!");
             }
         }
     }
