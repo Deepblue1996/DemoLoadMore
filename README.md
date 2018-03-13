@@ -8,7 +8,7 @@ RecyclerView fast use adapter insert header layout, foot layout
 
 部署:
  
-工程budle.gradle添加
+下拉刷新工程budle.gradle添加
 <pre><code>dependencies {
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
 }
