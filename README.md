@@ -1,9 +1,6 @@
 # UniversalAdapter
 UniversalAdapter is a fast recyclerview adapter, which enables quick insertion of header layout and bottom layout.
 
-### RecyclerView 快捷使用适配器 插入头布局，脚布局
-RecyclerView fast use adapter insert header layout, foot layout
-
 ![Image text](https://raw.githubusercontent.com/Deepblue1996/UniversalAdapter/master/20180203163000.jpg)
 
 ## How to
