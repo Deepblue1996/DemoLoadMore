@@ -1,5 +1,6 @@
 # UniversalAdapter
-<pre><code>UniversalAdapter is a fast recyclerview adapter, which enables quick insertion of header layout and bottom layout.
+<pre><code>UniversalAdapter is a fast recyclerview adapter, 
+which enables quick insertion of header layout and bottom layout.
 </code></pre>
 
 ![Image text](https://raw.githubusercontent.com/Deepblue1996/UniversalAdapter/master/20180203163000.jpg)
@@ -21,7 +22,7 @@ Add it in your root build.gradle at the end of repositories:
 			...
 			maven { url 'https://jitpack.io' }
 		}
-	}Copy
+	}
 Step 2. Add the dependency
 
 	dependencies {
